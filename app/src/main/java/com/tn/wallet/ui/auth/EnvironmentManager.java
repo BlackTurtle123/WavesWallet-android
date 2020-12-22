@@ -49,8 +49,8 @@ public class EnvironmentManager {
     }
 
     public enum Environment {
-        PRODUCTION(KEY_ENV_PROD, "https://tnnode2.turtlenetwork.eu", "https://privatematcher.blackturtle.eu/", "https://bot.blackturtle.eu/api/", 'L'),
-        TESTNET(KEY_ENV_TESTNET, "https://apitnetworktest.blackturtle.eu", "https://unknown.blackturtle.eu/", "https://bot.blackturtle.eu/api/", 'l');
+        PRODUCTION(KEY_ENV_PROD, "https://tnnode2.turtlenetwork.eu", "https://matcher.turtlenetwork.eu/", "https://bot.blackturtle.eu/api/", 'L'),
+        TESTNET(KEY_ENV_TESTNET, "https://testnet.tnnode3.turtlenetwork.eu", "https://testnet.matcher.turtlenetwork.eu/", "https://bot.blackturtle.eu/testnet/api", 'l');
 
         private String name;
         private String nodeUrl;

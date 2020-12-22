@@ -79,7 +79,8 @@ public class RxErrorHandlingCallAdapterFactory extends CallAdapter.Factory {
             if (throwable instanceof HttpException) {
                 HttpException httpException = (HttpException) throwable;
                 Response response = httpException.response();
-
+                System.out.println(response.raw().request().toString());
+                System.out.println(response.errorBody());
                 return RetrofitException.httpError(response.raw().request().url().toString(), response, retrofit);
             }
             // A network error happened
