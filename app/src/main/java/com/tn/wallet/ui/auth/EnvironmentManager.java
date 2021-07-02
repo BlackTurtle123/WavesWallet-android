@@ -49,21 +49,23 @@ public class EnvironmentManager {
     }
 
     public enum Environment {
-        PRODUCTION(KEY_ENV_PROD, "https://tnnode2.turtlenetwork.eu", "https://matcher.turtlenetwork.eu/", "https://bot.blackturtle.eu/api/", 'L'),
-        TESTNET(KEY_ENV_TESTNET, "https://testnet.tnnode3.turtlenetwork.eu", "https://testnet.matcher.turtlenetwork.eu/", "https://bot.blackturtle.eu/testnet/api", 'l');
+        PRODUCTION(KEY_ENV_PROD, "https://tnnode2.turtlenetwork.eu", "https://matcher.turtlenetwork.eu/", "https://bot.blackturtle.eu/api/", 'L',"3JwdMmF7xEack9y8SJ4VeQ4UX2qmu1jCoWa"),
+        TESTNET(KEY_ENV_TESTNET, "https://testnet.tnnode3.turtlenetwork.eu", "https://testnet.matcher.turtlenetwork.eu/", "https://bot.blackturtle.eu/testnet/api", 'l',"3XrUtvRZ6LLU8F2wwkuDffwTuLUNcpnjthB");
 
         private String name;
         private String nodeUrl;
         private String matherUrl;
         private String dataFeedUrl;
         private char addressScheme;
+        private String oracle;
 
-        private Environment(String name, String nodeUrl, String matherUrl, String dataFeedUrl,  char addressScheme) {
+        private Environment(String name, String nodeUrl, String matherUrl, String dataFeedUrl,  char addressScheme, String oracle) {
             this.name = name;
             this.nodeUrl = nodeUrl;
             this.dataFeedUrl = dataFeedUrl;
             this.matherUrl = matherUrl;
             this.addressScheme = addressScheme;
+            this.oracle = oracle;
         }
 
         public String getMatherUrl() {
@@ -99,6 +101,9 @@ public class EnvironmentManager {
             return null;
         }
 
+        public String getOracle() {
+            return oracle;
+        }
     }
 
 }
